@@ -1,4 +1,4 @@
-Title: All you need is use pelican and github pages to write blogs
+Title: All you need is to use pelican and github pages to write blogs
 Date: 2025-8-25
 Tags: python, pelican, pages, blog
 Description: How to Build a Blog with Pelican and GitHub Pages: No Tech Degree Required!
