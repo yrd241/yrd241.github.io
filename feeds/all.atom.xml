@@ -124,7 +124,6 @@ Hello, world! This is my &lt;span class="ge"&gt;*awesome*&lt;/span&gt; blog, pow
    &lt;code&gt;bash
    make github&lt;/code&gt;
 3. Wait a minute or two, and your updated blog will be live! The &lt;code&gt;make github&lt;/code&gt; command handles everything—generating the site and pushing it to the &lt;code&gt;gh-pages&lt;/code&gt; branch. No manual file copying or branch juggling required.&lt;/p&gt;
-&lt;hr&gt;
 &lt;h2&gt;Step 8: Make It Pretty (Optional)&lt;/h2&gt;
 &lt;p&gt;Pelican’s default theme is… meh. To spice it up:
 - Browse themes at &lt;a href="http://pelicanthemes.com/"&gt;pelicanthemes.com&lt;/a&gt; or GitHub.
