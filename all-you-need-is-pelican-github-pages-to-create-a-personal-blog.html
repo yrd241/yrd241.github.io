@@ -57,7 +57,6 @@ feeds/all.atom.xml"
     </header>
     <nav>
         <ul>
-                    <li><a href="/category/tech.html"> Tech </a></li>
                     <li><a                         class="active" href="/category/tutorial.html"> Tutorial </a></li>
         </ul>
     </nav>
@@ -70,7 +69,7 @@ feeds/all.atom.xml"
                 <li>
                     <time datetime="2025-08-25 00:00:00+08:00">Aug 25, 2025</time>
                 </li>
-                <li>1 min read</li>
+                <li>7 min read</li>
                 <li>
                     Categories:
                     <a href="/category/tutorial.html"><em>Tutorial</em></a>
@@ -84,8 +83,164 @@ feeds/all.atom.xml"
                 </li>
             </ul>
         </aside>
-        <h3>Introduction</h3>
-<p>So, I am 30+ , I finally got my first personal blog....</p>
+        <h1>How to Build a Blog with Pelican and GitHub Pages: No Tech Degree Required!</h1>
+<p>Hey there, future blog superstar! 😎 Want to share your thoughts, memes, or cat-pic reviews with the world? You don’t need to be a coding ninja to make a slick blog. With <strong>Pelican</strong> (a Python-powered static site generator) and <strong>GitHub Pages</strong> (free hosting, yay!), you can have a blog up faster than you can say “I forgot my Wi-Fi password.” Let’s make it happen with this step-by-step guide that’s easier than assembling IKEA furniture.</p>
+<hr>
+<h2>Why Pelican and GitHub Pages?</h2>
+<ul>
+<li><strong>Pelican</strong>: It’s like a magical typewriter that turns simple text files into a beautiful website. No databases, no drama—just pure, static HTML goodness.</li>
+<li><strong>GitHub Pages</strong>: Free hosting by GitHub. It’s like renting a penthouse for $0, except it’s a website, and there’s no rooftop pool (yet).</li>
+</ul>
+<p>Ready? Let’s roll! 🚀</p>
+<hr>
+<h2>Step 1: Get Your Tools Ready</h2>
+<p>Before we start, make sure you have:
+- <strong>Python</strong> (3.8 or higher): Pelican runs on Python, so grab it from <a href="https://www.python.org/downloads/">python.org</a> if you haven’t already. Think of Python as the coffee that powers this blogging machine.
+- <strong>Git</strong>: You’ll need Git to push your blog to GitHub. Download it from <a href="https://git-scm.com/">git-scm.com</a>.
+- <strong>Make</strong>: Pelican’s <code>make github</code> command uses <code>make</code> to automate deployment. Most Linux/macOS systems have it; Windows users can install it via <a href="http://www.mingw.org/">MinGW</a> or WSL.
+- A <strong>GitHub account</strong>: If you don’t have one, sign up at <a href="https://github.com">github.com</a>. It’s free, and you’ll feel like a coder just by logging in.
+- A text editor: VS Code, Sublime Text, or even Notepad will do. This is where you’ll write your blog posts in Markdown (fancy text, basically).</p>
+<p>Got all that? Sweet, you’re ready to rumble!</p>
+<hr>
+<h2>Step 2: Install Pelican</h2>
+<p>Pelican is a Python package, so we’ll use <code>pip</code> to install it. Open your terminal (or Command Prompt on Windows) and type:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican<span class="w"> </span>markdown
+</code></pre></div>
+
+<ul>
+<li><code>pelican</code>: The star of the show, turning your text into a website.</li>
+<li><code>markdown</code>: Lets you write blog posts in Markdown, which is like texting but for blogs.</li>
+</ul>
+<p>If you see some installation gibberish and no errors, you’re golden. If you get errors, double-check that Python and <code>pip</code> are installed correctly (<code>pip --version</code> should tell you something useful).</p>
+<hr>
+<h2>Step 3: Create a Pelican Project</h2>
+<p>Time to set up your blog’s skeleton. In your terminal, navigate to a folder where you want your blog to live (e.g., <code>~/my-blog</code>), then run:</p>
+<div class="highlight"><pre><span></span><code>pelican-quickstart
+</code></pre></div>
+
+<p>Pelican will ask you a bunch of questions. Here’s how to answer them (feel free to tweak as needed):
+- <strong>Where do you want to create your new project?</strong> Just hit Enter to use the current folder.
+- <strong>What will be the title of this web site?</strong> Pick something cool like “My Epic Blog.”
+- <strong>Who will be the author of this web site?</strong> That’s you! Put your name or “Blogging McBlogface.”
+- <strong>What will be the default language?</strong> Probably “en” for English, unless you’re feeling fancy.
+- <strong>Do you want to specify a URL prefix?</strong> For GitHub Pages, enter <code>https://&lt;your-username&gt;.github.io/&lt;repo-name&gt;</code> (e.g., <code>https://coolcoder.github.io/my-blog</code>).
+- <strong>Do you want to enable article pagination?</strong> Say “y” (yes) for now—it’s nice for readers.
+- <strong>What is your time zone?</strong> Something like “America/New_York” or “Europe/London.” Google “Python time zones” if you’re unsure.
+- <strong>Do you want to generate a tasks.py/Makefile to automate generation and publishing?</strong> Say “y” (yes)—this gives you the <code>Makefile</code> we’ll use for <code>make github</code>.</p>
+<p>Boom! Pelican just created a bunch of folders and files, including a <code>Makefile</code> for easy deployment. Don’t panic—they’re just the scaffolding for your blog.</p>
+<hr>
+<h2>Step 4: Write Your First Blog Post</h2>
+<p>Your blog posts live in the <code>content</code> folder as Markdown files (<code>.md</code>). Let’s write one! Create a file called <code>first-post.md</code> in the <code>content</code> folder with this content:</p>
+<div class="highlight"><pre><span></span><code>Title: My First Blog Post
+Date: 2025-08-25 12:00
+Category: Blog
+Tags: first, blog, awesomeness
+Slug: my-first-post
+Author: Your Name
+
+Hello, world! This is my <span class="ge">*awesome*</span> blog, powered by Pelican and GitHub Pages. I’m basically a tech wizard now. Stay tuned for more epic content, like how to microwave popcorn without burning it.
+</code></pre></div>
+
+<p>Save it, and you’ve just written your first post! Markdown is super simple: use <code>#</code> for headings, <code>*</code> for italics, <code>**</code> for bold, and lists are just <code>-</code> or <code>*</code>. Google “Markdown cheatsheet” if you want to get fancy.</p>
+<hr>
+<h2>Step 5: Generate Your Site</h2>
+<p>Now, let’s turn your Markdown into a website. In your terminal, navigate to your project folder and run:</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>html
+</code></pre></div>
+
+<p>This tells Pelican to grab your <code>content</code> folder and spit out a shiny website in the <code>output</code> folder. Check the <code>output</code> folder—you’ll see HTML files, CSS, and other goodies.</p>
+<p>To preview your site locally, run:</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>serve
+</code></pre></div>
+
+<p>Open your browser and go to <code>http://localhost:8000</code>. Behold, your blog! It’s probably using Pelican’s default theme, which is like wearing a plain T-shirt—functional but not super stylish. We’ll fix that later.</p>
+<hr>
+<h2>Step 6: Set Up GitHub Pages with make github</h2>
+<p>Time to share your blog with the world using Pelican’s <code>make github</code> command for a super-smooth deployment:</p>
+<ol>
+<li><strong>Create a GitHub Repository</strong>:</li>
+<li>Go to <a href="https://github.com">github.com</a> and click “New repository.”</li>
+<li>Name it <code>&lt;your-username&gt;.github.io</code> (e.g., <code>coolcoder.github.io</code>) for a personal site, or any name if it’s a project site (e.g., <code>my-blog</code>).</li>
+<li>
+<p>Make it public and initialize it with a README.</p>
+</li>
+<li>
+<p><strong>Initialize Your Local Repo</strong>:</p>
+</li>
+<li>In your project folder (where <code>pelicanconf.py</code> and <code>Makefile</code> live), initialize a Git repo:
+     <code>bash
+     git init
+     git add .
+     git commit -m "My awesome blog begins!"</code></li>
+<li>
+<p>Link it to your GitHub repo:
+     <code>bash
+     git remote add origin https://github.com/&lt;your-username&gt;/&lt;repo-name&gt;.git
+     git branch -M main
+     git push -u origin main</code></p>
+</li>
+<li>
+<p><strong>Configure the Makefile</strong>:</p>
+</li>
+<li>Open the <code>Makefile</code> in your project folder. Ensure it has a <code>github</code> target (it should, thanks to <code>pelican-quickstart</code>). Look for lines like:
+     <code>makefile
+     github: publish
+         ghp-import -n -p -f output</code></li>
+<li>
+<p>This uses <code>ghp-import</code> under the hood, so let’s install it:
+     <code>bash
+     pip install ghp-import</code></p>
+</li>
+<li>
+<p><strong>Push Your Site to GitHub Pages</strong>:</p>
+</li>
+<li>Generate and publish your site in one go:
+     <code>bash
+     make github</code></li>
+<li>
+<p>This runs <code>pelican content</code> to generate your site, then uses <code>ghp-import</code> to push the <code>output</code> folder to the <code>gh-pages</code> branch, which GitHub Pages uses to serve your site.</p>
+</li>
+<li>
+<p><strong>Configure GitHub Pages</strong>:</p>
+</li>
+<li>Go to your repo on GitHub, click “Settings,” then “Pages.”</li>
+<li>Under “Source,” select “Deploy from a branch” and choose the <code>gh-pages</code> branch.</li>
+<li>Save, and GitHub will give you a URL like <code>https://&lt;your-username&gt;.github.io</code> (or <code>https://&lt;your-username&gt;.github.io/&lt;repo-name&gt;</code> for project sites). Wait a few minutes, and your blog should be live!</li>
+</ol>
+<hr>
+<h2>Step 7: Update Your Blog</h2>
+<p>Want to add a new post or update your blog? It’s as easy as eating leftover pizza:
+1. Write a new <code>.md</code> file in the <code>content</code> folder (like <code>second-post.md</code>).
+2. Generate and publish your updated site:
+   <code>bash
+   make github</code>
+3. Wait a minute or two, and your updated blog will be live! The <code>make github</code> command handles everything—generating the site and pushing it to the <code>gh-pages</code> branch. No manual file copying or branch juggling required.</p>
+<hr>
+<h2>Step 8: Make It Pretty (Optional)</h2>
+<p>Pelican’s default theme is… meh. To spice it up:
+- Browse themes at <a href="http://pelicanthemes.com/">pelicanthemes.com</a> or GitHub.
+- Clone a theme to your project’s <code>themes</code> folder:
+  <code>bash
+  git clone https://github.com/getpelican/pelican-themes themes</code>
+- Update <code>pelicanconf.py</code> in your project folder to use the theme. Add:
+  <code>python
+  THEME = "themes/&lt;theme-name&gt;"</code>
+- Regenerate and publish your site with <code>make github</code>.</p>
+<hr>
+<h2>Step 9: Keep Blogging!</h2>
+<p>To keep your blog fresh, just add more <code>.md</code> files to the <code>content</code> folder and run <code>make github</code>. It’s like sending postcards to the internet, but cooler.</p>
+<hr>
+<h2>Troubleshooting: When Things Go Wrong</h2>
+<ul>
+<li><strong>Pelican or ghp-import not found?</strong> Make sure they’re installed (<code>pip show pelican ghp-import</code>).</li>
+<li><strong>make: command not found?</strong> Install <code>make</code> (e.g., via MinGW on Windows or <code>sudo apt install make</code> on Linux).</li>
+<li><strong>Site not updating on GitHub?</strong> Ensure you ran <code>make github</code> and check that the <code>gh-pages</code> branch is set in GitHub Pages settings.</li>
+<li><strong>Looks like a 90s website?</strong> Grab a better theme or tweak the CSS in <code>pelicanconf.py</code>.</li>
+</ul>
+<hr>
+<h2>You’re a Blogger Now!</h2>
+<p>Congrats, you’ve just built a blog with Pelican and GitHub Pages! 🎉 The <code>make github</code> command makes updating your blog so easy you’ll have time to argue about pineapple on pizza. Go write about your favorite taco recipe, your pet’s secret talents, or why Comic Sans isn’t <em>that</em> bad. Share your blog link with friends, and bask in your new tech cred. If you get stuck, Google is your friend, or ask me (Grok) for help—I’m here to save the day!</p>
+<p>Happy blogging, you internet rockstar! 🌟</p>
     </article>
     <section class="post-nav">
         <div id="left-page">
@@ -94,8 +249,6 @@ feeds/all.atom.xml"
         </div>
         <div id="right-page">
             <div id="right-link">
-                <a href="/another-blog.html">Another Blog </a>
-                <div id="right-arrow"><i class="fa fa-chevron-circle-right"></i></div>
             </div>
         </div>
     </section>
