@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>CrazyBanana - pages</title>
+        <title>CrazyBanana - Another Blog</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"/>
@@ -12,6 +12,12 @@
             <link href="/
 feeds/all.atom.xml"
                   type="application/atom+xml" rel="alternate" title="CrazyBanana Atom Feed"/>
+
+<meta name="description" content="test" />
+<meta name="tags" content="python" />
+<meta name="tags" content="pelican" />
+<meta name="tags" content="pages" />
+<meta name="tags" content="blog" />
 </head>
 <body>
 <style>.github-corner:hover .octo-arm {
@@ -51,25 +57,50 @@ feeds/all.atom.xml"
     </header>
     <nav>
         <ul>
-                    <li><a href="/category/tech.html"> Tech </a></li>
+                    <li><a                         class="active" href="/category/tech.html"> Tech </a></li>
                     <li><a href="/category/tutorial.html"> Tutorial </a></li>
         </ul>
     </nav>
-    <main>
-        <section id="list">
-            <h2>#pages</h2>
+<main>
+    <article>
+        <h1>Another Blog</h1>
+        
+        <aside>
             <ul>
-                    <li>
-                        <a href="/all-you-need-is-pelican-github-pages-to-create-a-personal-blog.html">All you need is pelican + github pages to create a personal blog</a>
-                        <time>Aug 2025</time>
-                    </li>
-                    <li>
-                        <a href="/another-blog.html">Another Blog</a>
-                        <time>Aug 2025</time>
-                    </li>
+                <li>
+                    <time datetime="2025-08-25 00:00:00+08:00">Aug 25, 2025</time>
+                </li>
+                <li>1 min read</li>
+                <li>
+                    Categories:
+                    <a href="/category/tech.html"><em>Tech</em></a>
+                </li>
+                <li>
+                    Tags:
+                    <a href="/tag/python.html"><em>#python</em></a>
+                    <a href="/tag/pelican.html"><em>#pelican</em></a>
+                    <a href="/tag/pages.html"><em>#pages</em></a>
+                    <a href="/tag/blog.html"><em>#blog</em></a>
+                </li>
             </ul>
-        </section>
-    </main>
+        </aside>
+        
+    </article>
+    <section class="post-nav">
+        <div id="left-page">
+            <div id="left-link">
+                <div id="left-arrow"><i class="fa fa-chevron-circle-left"></i></div>
+                <a href="/all-you-need-is-pelican-github-pages-to-create-a-personal-blog.html"> All you need is pelican + github pages to create a personal blog</a>
+            </div>
+        </div>
+        <div id="right-page">
+            <div id="right-link">
+            </div>
+        </div>
+    </section>
+    <div>
+    </div>
+</main>
     <footer>
         <h6>
             Copyright
