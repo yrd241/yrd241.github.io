@@ -1,6 +1,6 @@
 AUTHOR = 'yrd241'
 SITENAME = 'CrazyBanana'
-SITEURL = ""
+SITEURL = "https://yrd241.github.io"
 
 PATH = "content"
 
@@ -22,7 +22,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 SOCIAL = (
-     ('github', 'https://yrd241.github.com/'),
+     ('github', 'https://github.com/yrd241'),
      ('twitter', 'https://x.com/yrd241'),
 )
 
